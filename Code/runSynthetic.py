@@ -1,9 +1,9 @@
 '''
-Copyright 2017 Javier Olivares Romero
+Copyright 2018 Javier Olivares Romero
 
-This file is part of PyAspidistra.
+This file is part of Aspidistra3D.
 
-    PyAspidistra is free software: you can redistribute it and/or modify
+    Aspidistra3D is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -35,7 +35,7 @@ import corner
 # np.random.seed(seed=100)
 from astroML.decorators import pickle_results
 
-dir_  = os.path.expanduser('~') +"/PyAspidistra/"
+dir_  = os.path.expanduser('~') +"/Aspidistra3D/"
 dir_graph = dir_ + "Analysis/Synthetic/King/Truncated/"
 real  = False
 

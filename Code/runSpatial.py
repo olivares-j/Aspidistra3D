@@ -37,7 +37,7 @@ import scipy.stats as st
 from Functions import Deg2pc,TruncSort,DenNum,RotRadii,fMAP,fCovar,Epsilon,MassRj,MassEps
 
 #########################################################################################
-dir_  = os.path.expanduser('~') +"/PyAspidistra/"
+dir_  = os.path.expanduser('~') +"/Aspidistra3D/"
 real  = True
 Ntot  = 10000  # Number of stars if synthetic (real = False)
 
@@ -214,13 +214,13 @@ if real :
 	#------- reads data ---------------
 	fdata = dir_+'Data/OnlyTycho.csv'
 	cdtsT = np.array(pd.read_csv(fdata,header=0,sep=',',usecols=[1,2,17,18,32],dtype=np.float64))#K band col=21
-	cdtsT[:,[2, 3,4]] = cdtsT[:,[4,2,3]] # Puts band and uncertainti in lasts columns
+	cdtsT[:,[2, 3,4]] = cdtsT[:,[4,2,3]] # Puts band and uncertainty in lasts columns
 	fdata = dir_+'Data/Members.csv'
 	cdtsD  = np.array(pd.read_csv(fdata,header=0,sep=',',usecols=[0,3,4,7,10],dtype=np.float64)) #K band col=8
 	cdtsD[:,[0,1,2]] = cdtsD[:,[1,2,0]] # reorder
-	print("Make shure to have data in right order! (R.A., Dec. Prob., Band,e_band)")
+	print("Make sure to have data in right order! (R.A., Dec. Prob., Band,e_band)")
 	cdts  = np.vstack([cdtsT,cdtsD])
-	#---- removes duplicateds --------
+	#---- removes duplicated --------
 	sumc  = np.sum(cdts[:,:2],axis=1)
 	idx   = np.unique(sumc,return_index=True)[1]
 	cdts  = cdts[idx]
@@ -255,7 +255,7 @@ else :
 Module  = mod.Module(cdts,Rcut,hyp,Dist,centre)
 
 #========================================================
-#--------- Dimension, walkers and inital positions -------------------------
+#--------- Dimension, walkers and initial positions -------------------------
 # number of dimensions our problem has
 ndim     = len(namepar)
 n_params = len(namepar)
